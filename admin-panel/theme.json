@@ -1,6 +1,6 @@
 {
   "tenantId": "admin-panel",
-  "name": "Admin Panel",
+  "name": "Admin",
   "colors": {
     "background": "#ffffff",
     "foreground": "#1f2430",
