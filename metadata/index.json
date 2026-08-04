@@ -1,0 +1,16 @@
+{
+  "tenants": [
+    {
+      "tenantId": "vaults",
+      "name": "Vaults"
+    },
+    {
+      "tenantId": "admin-panel",
+      "name": "Admin Panel"
+    },
+    {
+      "tenantId": "whitelabel",
+      "name": "Whitelabel"
+    }
+  ]
+}

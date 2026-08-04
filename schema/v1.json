@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/whitelabel-themes/schema/v1.json",
+  "title": "LMNL Tenant Theme (v1)",
+  "description": "Self-contained runtime theme for one tenant/brand. colors/typography keys are bare semantic token names applied as --{key}. Mirrors the TenantThemeDelta TypeScript interface in lmnl-design-system.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["tenantId", "name", "colors"],
+  "properties": {
+    "schemaVersion": {
+      "description": "Contract version for the file shape. Recommended: 1.",
+      "type": "integer",
+      "const": 1
+    },
+    "tenantId": {
+      "description": "Stable tenant key. Must equal the tenant folder name and the app's organisationId.",
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9._-]+$"
+    },
+    "name": {
+      "description": "Human-readable brand name, e.g. 'Acme Bank'.",
+      "type": "string",
+      "minLength": 1
+    },
+    "colors": {
+      "description": "Semantic color tokens. Key = bare token name without '--' (e.g. 'primary'); value = a CSS color or var() reference.",
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": { "type": "string", "minLength": 1 }
+    },
+    "typography": {
+      "description": "Typography token overrides. Key = bare token name without '--'.",
+      "type": "object",
+      "additionalProperties": { "type": "string", "minLength": 1 }
+    },
+    "branding": {
+      "description": "Brand assets. Values are filenames relative to the tenant's assets/ folder (or absolute URLs).",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "logo": { "type": "string", "minLength": 1 },
+        "favicon": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}
