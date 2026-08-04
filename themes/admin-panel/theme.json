@@ -1,6 +1,7 @@
 {
+  "schemaVersion": 1,
   "tenantId": "admin-panel",
-  "name": "Admin",
+  "name": "Admin Panel",
   "colors": {
     "background": "#ffffff",
     "foreground": "#1f2430",
@@ -229,10 +230,41 @@
     "radius-sm": "calc(0.625rem - 4px)",
     "radius-md": "calc(0.625rem - 2px)",
     "radius-lg": "0.625rem",
-    "radius-xl": "calc(0.625rem + 4px)"
+    "radius-xl": "calc(0.625rem + 4px)",
+    "card-elevated": "#24263e",
+    "card-action": "#252741",
+    "card-disabled": "#2f314c",
+    "card-disabled-foreground": "#454972",
+    "avatar-ring": "#1b1d32",
+    "avatar-text-bg": "#eef2ff",
+    "avatar-text-fg": "#4f46e5",
+    "avatar-placeholder-fg": "#ffffff",
+    "avatar-group-ring": "#ffffff",
+    "avatar-add-border": "#cbd5e1",
+    "avatar-label": "#f1f1f1",
+    "avatar-label-muted": "#475569",
+    "avatar-indicator-ring": "#ffffff",
+    "avatar-indicator-muted": "#cbd5e1",
+    "avatar-indicator-brand": "#4f46e5",
+    "avatar-indicator-destructive": "#f43f5e",
+    "avatar-indicator-warning": "#f59e0b",
+    "avatar-indicator-success": "#22c55e",
+    "avatar-company": "#f43f5e",
+    "avatar-verified": "#22c55e",
+    "tooltip": "#171829",
+    "tooltip-foreground": "#ffffff",
+    "tooltip-muted": "#757e9d",
+    "tooltip-link": "#2bb673",
+    "tooltip-border": "#171829",
+    "tooltip-shadow": "0px 5px 5px 0px rgba(16, 18, 28, 0.3)",
+    "accordion": "#24273e",
+    "accordion-foreground": "#f1f1ef",
+    "accordion-muted": "#475569",
+    "accordion-border": "#262b47",
+    "accordion-focus-ring": "#2bb673"
   },
   "branding": {
-    "logo": "/assets/logo.svg",
-    "favicon": "/assets/favicon.ico"
+    "logo": "logo.svg",
+    "favicon": "favicon.ico"
   }
 }

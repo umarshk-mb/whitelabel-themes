@@ -1,0 +1,44 @@
+name: Validate themes
+
+# Gatekeeper for brand onboarding: every themes/{tenant}/theme.json must match
+# the v1 schema and its tenantId must equal its folder name. This is the ONLY logic here.
+on:
+  pull_request:
+    paths:
+      - "themes/*/theme.json"
+      - "schema/**"
+      - ".github/workflows/validate.yml"
+  push:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Validate every theme against schema/v1.json
+        run: >
+          npx --yes -p ajv-cli@5 -p ajv-formats@3 ajv validate
+          -c ajv-formats
+          --spec=draft2020
+          --strict=false
+          -s schema/v1.json
+          -d "themes/*/theme.json"
+
+      - name: tenantId must equal folder name
+        run: |
+          fail=0
+          for f in themes/*/theme.json; do
+            folder=$(basename "$(dirname "$f")")
+            id=$(node -p "require('./$f').tenantId")
+            if [ "$id" != "$folder" ]; then
+              echo "::error file=$f::tenantId '$id' does not match folder '$folder'"
+              fail=1
+            fi
+          done
+          exit $fail
