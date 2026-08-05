@@ -3,7 +3,7 @@
   "tenantId": "vaults",
   "name": "Vaults",
   "colors": {
-    "background": "#000000",
+    "background": "#fff",
     "foreground": "#f1f1ef",
     "card": "#202238",
     "card-foreground": "#f1f1ef",
